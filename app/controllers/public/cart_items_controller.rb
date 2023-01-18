@@ -4,7 +4,7 @@ private
   def cart_item_params
       params.require(:cart_item).permit(:item_id, :amount)
   end
-  
+
   def create
       binding.pry
   end
