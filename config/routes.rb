@@ -14,9 +14,9 @@ Rails.application.routes.draw do
   scope module: :public do
     resource :customers, only: [:show, :edit, :update]
   end
-  
+
   namespace :admin do
     root to:'homes#top'
-    resources :items, only: [:new, :create]
+    resources :items
   end
   end
