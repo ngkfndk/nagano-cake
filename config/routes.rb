@@ -13,10 +13,15 @@ Rails.application.routes.draw do
   }
   scope module: :public do
     resource :customers, only: [:show, :edit, :update]
+    resources :items, only: [:index]
+    resources :cart_items, only: [:index]
+    get '/about' => 'homes#about'
   end
 
   namespace :admin do
     root to:'homes#top'
     resources :items
+    resources :customers, only: [:index]
+    resources :genres, only: [:index]
   end
   end
